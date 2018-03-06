@@ -109,7 +109,15 @@ mkrange(3, 0)               // 3, 2, 1
 ```
 
 
+## 使用 - 导入其他模板文件
+使用require标签进行导入，require标签中path表示模板文件的相对路径，例如：
+```html
+<require path="./../lib/header.html"></require>
+```
+
+
 ## 特别注意
 
 * 一个标签中只能出现一个判断标签（hi-if、hi-else、hi-show、hi-hide 之一）
 * 如果在一个标签上同时又 hi-for 和 hi-if系列 属性，则会优先进行 hi-for
+* require标签必须有闭合标签
