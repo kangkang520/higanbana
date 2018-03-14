@@ -24,8 +24,21 @@ export const hi = {
 
 	forIn: function (obj: any | { [i: string]: any }, cb: (item: any, key: string | number) => string): Array<string> {
 		let buffer = []
-		for (let i in obj) {
-			buffer.push(cb(obj[i], (obj instanceof Array) ? parseInt(i) : i))
+		//字符串
+		if (typeof obj === 'string') {
+			for (let i = 0; i < obj.length; i++) { buffer.push(cb(obj[i], i)) }
+		}
+		//数字
+		else if (typeof obj == 'number') {
+			for (let i = 0; i < obj; i++) { buffer.push(cb(i, i)) }
+		}
+		//数组
+		else if (obj instanceof Array) {
+			buffer = obj.map((item: number, N) => cb(item, N))
+		}
+		//其他
+		else {
+			buffer = Object.keys(obj).map(key => cb(obj[key], key))
 		}
 		return buffer
 	},
