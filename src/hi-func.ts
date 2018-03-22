@@ -1,5 +1,4 @@
 //这个文件中定义了模板中会用到的函数
-
 export const hi = {
 
 	if: function (exp: any, obj: any, html: string): string {
@@ -24,13 +23,15 @@ export const hi = {
 
 	forIn: function (obj: any | { [i: string]: any }, cb: (item: any, key: string | number) => string): Array<string> {
 		let buffer = []
+		if (typeof obj == 'undefined' || typeof obj == 'boolean') return []
 		//字符串
-		if (typeof obj === 'string') {
-			for (let i = 0; i < obj.length; i++) { buffer.push(cb(obj[i], i)) }
+		else if (typeof obj === 'string') {
+			for (let i = 0; i < obj.length; i++)  buffer.push(cb(obj[i], i))
 		}
 		//数字
 		else if (typeof obj == 'number') {
-			for (let i = 0; i < obj; i++) { buffer.push(cb(i, i)) }
+			if (obj > 0) for (let i = 0; i < obj; i++)  buffer.push(cb(i, i))
+			else for (let i = 0; i > obj; i--)  buffer.push(cb(i, i))
 		}
 		//数组
 		else if (obj instanceof Array) {
@@ -69,5 +70,9 @@ export const hi = {
 			buffer.push(i)
 		}
 		return buffer
-	}
+	},
+
+	val: function (val: any) {
+		return val
+	},
 }

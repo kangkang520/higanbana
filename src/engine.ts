@@ -4,7 +4,6 @@ import { parse } from ".";
 
 /**
  * 给express使用的模板引擎
- * @param cached 是否使用缓存
  */
 export function engine() {
 
@@ -16,6 +15,9 @@ export function engine() {
 			//返回结果
 			callback(null, html)
 		} catch (e) {
+			//重新构建错误栈
+			let stack = (e.fileStack || []).map(([file, line]: any) => (line > 0) ? `${file}:${line}` : file)
+			if (stack.length > 0) e.stack = e.message + '\n  ' + stack.join('\n  ')
 			callback(e, null)
 		}
 	}
