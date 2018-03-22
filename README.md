@@ -144,4 +144,4 @@ mkrange(3, 0)               // 3, 2, 1
 
 * 一个标签中只能出现一个判断标签（hi-if、hi-else、hi-show、hi-hide 之一）
 * 如果在一个标签上同时又 hi-for 和 hi-if系列 属性，则会优先进行 hi-for
-* require标签必须有闭合标签(可以是“<require path="..." />”，也可以是“<require path="..."></require>”)
+* require标签必须有闭合标签(可以是“&lt;require path="..." /&gt;”，也可以是“&lt;require path="..."&gt;&lt;/require&gt;”)
