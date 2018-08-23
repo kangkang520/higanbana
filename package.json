@@ -49,7 +49,6 @@
   "bugs": {
     "url": "https://github.com/kangkang520/higanbana/issues"
   },
-  "readme": "docs/readme-en.md",
   "homepage": "https://github.com/kangkang520/higanbana#readme",
   "devDependencies": {
     "@types/jsdom": "^11.0.4",

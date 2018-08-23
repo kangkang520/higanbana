@@ -9,7 +9,7 @@ You cand add properties to html tags to render templates, like :
 <a href="{{urls.login}}" hi-if="session.user">Login</a>
 ```
 
-[中文文档](./readme-cn.md)
+[中文文档](./README_CN.md)
 
 ## Install
 
