@@ -4,7 +4,7 @@ higanbana（彼岸花）express模板引擎
 
 使用nodejs开发已久，期间使用了很多模板引擎，不过都不好用，心想，要是有一种模板引擎能够像angularJS或vue那样在标签上加上一些属性就能渲染该多好，所以呢，自己动手写一个吧！！！
 
-
+[English Document](./readme-en.md)
 
 ## 安装
 
