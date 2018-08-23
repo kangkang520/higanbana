@@ -25,7 +25,7 @@ app.engine('html', require('higanbana')())		//not only "html", others are ok
 For more information, see http://expressjs.com
 
 
-## Usage - Pring Val
+## Usage - Print
 
 Using {{ $val }} to print a value to html，like：
 ```html
